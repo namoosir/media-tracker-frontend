@@ -10,7 +10,27 @@ import axios from 'axios'
 const postData = async () => {
   try {
     const response = await axios.get(
-      'https://7d40-2607-fea8-a59f-1640-4d32-d71d-dfed-9b8b.ngrok-free.app/auth/platformconnection/request/youtube',
+      // 'https://7d40-2607-fea8-a59f-1640-4d32-d71d-dfed-9b8b.ngrok-free.app/auth/platformconnection/request/youtube',
+      'http://localhost:5238/auth/platformconnection/request/youtube',
+      {}
+    )
+
+    // Handle the response data here
+    console.log(response.data)
+
+    // You can also use this data to update your Vue component's state
+    // this.someData = response.data;
+    window.location.href = response.data.data;
+  } catch (error) {
+    // Handle errors here
+    console.error('Error:', error)
+  }
+}
+
+const oneMore = async () => {
+  try {
+    const response = await axios.get(
+      'http://localhost:5238/auth/platformconnection/1',
       {}
     )
 
@@ -24,11 +44,14 @@ const postData = async () => {
     console.error('Error:', error)
   }
 }
+
 </script>
 
 <template>
   <div>
     <button class="youtube" @click="postData">Youtube bruh</button>
+    <button class="youtube" @click="oneMore">other bruh</button>
+
   </div>
 </template>
 
