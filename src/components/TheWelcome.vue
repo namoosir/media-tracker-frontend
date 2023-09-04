@@ -9,11 +9,10 @@ import axios from 'axios'
 
 const postData = async () => {
   try {
-    const response = await axios.post('https://example.com/api/endpoint', {
-      // Your request data goes here
-      key1: 'value1',
-      key2: 'value2'
-    })
+    const response = await axios.get(
+      'https://7d40-2607-fea8-a59f-1640-4d32-d71d-dfed-9b8b.ngrok-free.app/auth/platformconnection/request/youtube',
+      {}
+    )
 
     // Handle the response data here
     console.log(response.data)
