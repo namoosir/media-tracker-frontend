@@ -6,12 +6,13 @@ import EcosystemIcon from './icons/IconEcosystem.vue'
 import CommunityIcon from './icons/IconCommunity.vue'
 import SupportIcon from './icons/IconSupport.vue'
 import axios from 'axios'
+// import VueCookie from 'vue-cookie';
 
 const postData = async () => {
   try {
     const response = await axios.get(
       // 'https://7d40-2607-fea8-a59f-1640-4d32-d71d-dfed-9b8b.ngrok-free.app/auth/platformconnection/request/youtube',
-      'http://localhost:5238/auth/platformconnection/request/youtube',
+      'http://localhost:5238/auth/sign/google',
       {}
     )
 
@@ -20,7 +21,7 @@ const postData = async () => {
 
     // You can also use this data to update your Vue component's state
     // this.someData = response.data;
-    window.location.href = response.data.data;
+    // window.location.href = response.data.data;
   } catch (error) {
     // Handle errors here
     console.error('Error:', error)
@@ -28,21 +29,25 @@ const postData = async () => {
 }
 
 const oneMore = async () => {
-  try {
-    const response = await axios.get(
-      'http://localhost:5238/auth/platformconnection/1',
-      {}
-    )
 
-    // Handle the response data here
-    console.log(response.data)
+  console.log(document.cookie);
+  // let value = .get('sessionToken');
+  // console.log(value);
+  // try {
+  //   const response = await axios.get(
+  //     'http://localhost:5238/auth/platformconnection/1',
+  //     {}
+  //   )
 
-    // You can also use this data to update your Vue component's state
-    // this.someData = response.data;
-  } catch (error) {
-    // Handle errors here
-    console.error('Error:', error)
-  }
+  //   // Handle the response data here
+  //   console.log(response.data)
+
+  //   // You can also use this data to update your Vue component's state
+  //   // this.someData = response.data;
+  // } catch (error) {
+  //   // Handle errors here
+  //   console.error('Error:', error)
+  // }
 }
 
 </script>
