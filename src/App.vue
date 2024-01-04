@@ -1,11 +1,14 @@
 <script setup lang="ts">
 import { RouterLink, RouterView } from 'vue-router'
-import HelloWorld from './components/HelloWorld.vue'
+import { Button } from '@/components/ui/button'
+import { useAuthStore } from '@/stores/auth/auth'
+import HeaderComponent from './components/HeaderComponent.vue';
+
+const authStore = useAuthStore()
+
 </script>
 
 <template>
-  <header></header>
+  <HeaderComponent v-if="authStore.isIdentified"/>
   <RouterView />
 </template>
-
-<style scoped></style>
