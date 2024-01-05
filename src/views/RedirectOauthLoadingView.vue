@@ -29,7 +29,7 @@ onMounted(() => {
     console.log('Set token');
     router.push('/home'); 
   } else if (errorParam) {
-
+    //TODO: need to handle a few things like deleted the old token and stuff
     error.value = errorParam;
     console.log('Error with Oauth Flow');
     router.push('/');

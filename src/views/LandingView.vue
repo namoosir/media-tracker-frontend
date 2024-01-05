@@ -1,11 +1,5 @@
 <script setup lang="ts">
-import router from '@/router';
 import LandingComponent from '../components/LandingComponent.vue'
-import { useAuthStore } from '@/stores/auth/auth'
-
-const authStore = useAuthStore()
-
-if (authStore.isIdentified) router.push('/home')
 
 </script>
 
