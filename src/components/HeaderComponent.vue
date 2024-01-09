@@ -16,9 +16,12 @@ const toggleMenu : () => void = () => {
 
 const onMenuButtonClick : (platform : string) => void = (platform) => {
     toggleMenu()
-    router.push(`/${platform}`)
+    if (platform === 'home') {
+        router.push(`${platform}`)
+    } else {
+        router.push(`/platform?type=${platform}`)
+    }
 }
-
 
 </script>
 
@@ -39,7 +42,7 @@ const onMenuButtonClick : (platform : string) => void = (platform) => {
         <SpotifyIcon class="h-10"/>
     </Button>
 </div>
-<div v-if="isOpen" @click="toggleMenu" class="absolute inset-0 left-0 z-1 backdrop-blur-sm backdrop-brightness-50 cursor-pointer">
+<div v-if="isOpen" ref="el" @click="toggleMenu" class="absolute inset-0 left-0 z-1 backdrop-blur-sm backdrop-brightness-50 cursor-pointer">
 </div>
 </template>
 

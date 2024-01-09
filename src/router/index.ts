@@ -4,6 +4,7 @@ import RedirectOauthLoadingView from '@/views/RedirectOauthLoadingView.vue'
 import HomeView from '@/views/HomeView.vue'
 import PageNotFoundView from '@/views/PageNotFoundView.vue'
 import { useAuthStore } from '@/stores/auth/auth'
+import PlatformView from '@/views/PlatformView.vue'
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -22,6 +23,11 @@ const router = createRouter({
       path: '/home',
       name: 'home',
       component: HomeView
+    },
+    {
+      path: '/platform',
+      name: 'platform',
+      component: PlatformView,
     },
     {
       path: '/404',
