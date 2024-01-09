@@ -4,14 +4,14 @@ import { ref } from 'vue'
 import { useRouter } from 'vue-router';
 
 import GatorLogoIcon from './icons/GatorLogoIcon.vue'
-import GoogleIcon from './icons/GoogleIcon.vue'
+import YoutubeIcon from './icons/YoutubeIcon.vue'
+import SpotifyIcon from './icons/SpotifyIcon.vue'
 
 const router = useRouter()
 const isOpen = ref(false)
 
 const toggleMenu : () => void = () => {
     isOpen.value = !isOpen.value
-    console.log(isOpen.value)
 }
 
 const onMenuButtonClick : (platform : string) => void = (platform) => {
@@ -23,22 +23,30 @@ const onMenuButtonClick : (platform : string) => void = (platform) => {
 </script>
 
 <template>
-<header v-if="!isOpen" class="absolute w-full">
+<header v-if="!isOpen" class="absolute w-screen">
     <div class="flex p-5 justify-end">
-    <Button variant="menu" @click="toggleMenu">MENU</Button>
+        <Button variant="menu" @click="toggleMenu">MENU</Button>
     </div>
 </header>
-<div v-if="isOpen" class="absolute flex flex-col justify-center items-center gap-5 px-3 w-28 h-full right-0 bg-background z-10 rounded-l-xl border-2">
+<div :class="{'opened': isOpen}" class="transition-all fixed flex flex-col justify-center items-center gap-5 px-3 w-28 h-full -right-28 bg-background z-10 rounded-l-xl border-2 inset-y-0">
     <Button @click="onMenuButtonClick('home')" variant="icon" size="icon">
         <GatorLogoIcon class="h-5"/>
     </Button>
     <Button @click="onMenuButtonClick('youtube')" variant="icon" size="icon">
-        <GoogleIcon/>
+        <YoutubeIcon class="h-7"/>
     </Button>
     <Button @click="onMenuButtonClick('spotify')" variant="icon" size="icon">
-
+        <SpotifyIcon class="h-10"/>
     </Button>
 </div>
-<div v-if="isOpen" @click="toggleMenu" class="absolute w-full h-full left-0 z-1 backdrop-blur-sm backdrop-brightness-50">
+<div v-if="isOpen" @click="toggleMenu" class="absolute inset-0 left-0 z-1 backdrop-blur-sm backdrop-brightness-50 cursor-pointer">
 </div>
 </template>
+
+<style scoped>
+.opened {
+    right: 0;
+    transition-duration: 500ms;
+}
+
+</style>
