@@ -4,7 +4,7 @@ import { Button } from '@/components/ui/button'
 import GoogleIcon from './icons/GoogleIcon.vue'
 import AggregatorLogoIcon from './icons/AggregatorLogoIcon.vue';
 
-const postData = async () => {
+const toGoogle = async () => {
   try {
     const response = await axios.get(
       // 'https://7d40-2607-fea8-a59f-1640-4d32-d71d-dfed-9b8b.ngrok-free.app/auth/platformconnection/request/youtube',
@@ -32,7 +32,7 @@ const postData = async () => {
       <AggregatorLogoIcon/>
       <p class="self-stretch text-center text-muted-foreground text-base font-medium">Track your usage data from various platforms and combine them into meaningful metrics</p>
     </div>
-    <Button variant="secondary" @click="postData">
+    <Button variant="secondary" @click="toGoogle">
       <GoogleIcon className="mr-2 h-4 w-4" /> 
       Continue with Google
     </Button>
