@@ -56,12 +56,18 @@
 }
 
 #app {
+  display: flex;
+  flex-direction: column;
   margin: 0 auto;
   font-family: Inter;
 }
 
 main {
-  /* min-height: 100vh; */
+  min-height: 100vh;
+}
+
+div[role=region] {
+  position: fixed;
 }
 
 /* 

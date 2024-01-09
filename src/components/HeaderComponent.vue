@@ -26,7 +26,7 @@ const onMenuButtonClick : (platform : string) => void = (platform) => {
 </script>
 
 <template>
-<header v-if="!isOpen" class="absolute w-screen">
+<header v-if="!isOpen" class="fixed w-screen">
     <div class="flex p-5 justify-end">
         <Button variant="menu" @click="toggleMenu">MENU</Button>
     </div>
@@ -42,7 +42,7 @@ const onMenuButtonClick : (platform : string) => void = (platform) => {
         <SpotifyIcon class="h-10"/>
     </Button>
 </div>
-<div v-if="isOpen" ref="el" @click="toggleMenu" class="absolute inset-0 left-0 z-1 backdrop-blur-sm backdrop-brightness-50 cursor-pointer">
+<div v-if="isOpen" ref="el" @click="toggleMenu" class="fixed inset-0 left-0 z-1 backdrop-blur-sm backdrop-brightness-50 cursor-pointer">
 </div>
 </template>
 

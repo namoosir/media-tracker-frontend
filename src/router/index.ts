@@ -45,7 +45,7 @@ router.beforeEach((to: RouteLocationNormalized, from: RouteLocationNormalized) =
   const authStore = useAuthStore()
 
   if (!authStore.isIdentified && to.name !== 'landing' && to.name !== 'oauthHandleRedirect') return { name: 'landing' }
-  if (authStore.isIdentified && to.name === 'landing') return { name: 'home' }
+  if (authStore.isIdentified && (to.name === 'landing' || to.name === 'oauthHandleRedirect')) return { name: 'home' }
 });
 
 export default router
