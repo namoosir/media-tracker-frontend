@@ -5,6 +5,7 @@ import HomeView from '@/views/HomeView.vue'
 import PageNotFoundView from '@/views/PageNotFoundView.vue'
 import { useAuthStore } from '@/stores/auth/auth'
 import PlatformView from '@/views/PlatformView.vue'
+import YoutubeHomeViewVue from '@/views/Youtube/YoutubeHomeView.vue'
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -28,6 +29,11 @@ const router = createRouter({
       path: '/platform',
       name: 'platform',
       component: PlatformView,
+    },
+    {
+      path: '/youtube',
+      name: 'youtubeHome',
+      component: YoutubeHomeViewVue
     },
     {
       path: '/404',
