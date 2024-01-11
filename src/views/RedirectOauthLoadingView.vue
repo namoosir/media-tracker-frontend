@@ -27,7 +27,7 @@ onMounted(() => {
   if (tokenParam) {
     authStore.setToken(tokenParam);
     toast({
-      title : 'Success',
+      title : 'Logged In',
       variant : 'default', 
       description: 'You are now logged in.'
     })
@@ -35,9 +35,9 @@ onMounted(() => {
   else if (errorParam) {
     if (!authStore.isIdentified) {
       toast({
-      title : 'Failed',
+      title : 'Failed to log in',
       variant : 'destructive', 
-      description: 'Failed to log in. Please try again.'
+      description: 'Please try again.'
       })
     }
   }

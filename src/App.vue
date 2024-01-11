@@ -10,7 +10,7 @@ const authStore = useAuthStore()
 </script>
 
 <template>
-  <Toaster />
   <HeaderComponent v-if="authStore.isIdentified"/>
   <RouterView />
+  <Toaster />
 </template>

@@ -17,7 +17,11 @@ export const useAuthStore: AuthStore = defineStore('auth', {
     setToken(token: string) {
       browserStorageSetItem('token', token);
       this.token = token;
-    }
+    },
+    logout() {
+      browserStorageClear();
+      this.token = null;
+    },
   }
 
 });
@@ -29,4 +33,8 @@ function browserStorageGetItem(key: string): string | null {
 
 function browserStorageSetItem(key: string, value: string){
   localStorage.setItem(key, value);
+}
+
+function browserStorageClear() {
+  localStorage.clear();
 }
