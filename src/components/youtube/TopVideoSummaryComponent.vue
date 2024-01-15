@@ -1,5 +1,4 @@
 <script setup lang="ts">
-import { ref } from "vue"
 import { Card } from '@/components/ui/card'
 import { Chart as ChartJS, ArcElement } from 'chart.js'
 import { Doughnut } from 'vue-chartjs';
@@ -8,7 +7,7 @@ import ChannelComponent from './ChannelComponent.vue';
 
 ChartJS.register(ArcElement)
 
-const goToTopChannels = () => {
+const goToTopVideos = () => {
 
 }
 
@@ -29,16 +28,19 @@ const options = {
   segmentShowStroke: false,
 }
 
+const image = "https://i.ytimg.com/vi/XqZsoesa55w/hq720.jpg?sqp=-oaymwEcCOgCEMoBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLAe7sh45ESDOsroR5IWvlpgHWkK3w";
+const name = "Baby Shark Dance | #babyshark Most Viewed Video | Animal Songs | PINKFONG Songs for Children"
 </script>
 
 <template>
-  <Card @click="goToTopChannels" class="flex flex-col py-3 px-5 min-w-80 gap-3 cursor-pointer">
+  <Card @click="goToTopVideos" class="flex flex-col py-3 px-5 min-w-80 gap-3 cursor-pointer">
     <TitleArrowComponent text="Top Channels" />
     <div class="flex flex-row justify-between items-center self-stretch">
-      <ChannelComponent variant="summary" name="PewDiePie" image="https://yt3.googleusercontent.com/5oUY3tashyxfqsjO5SGhjT4dus8FkN9CsAHwXWISFrdPYii1FudD4ICtLfuCw6-THJsJbgoY=s176-c-k-c0x00ffffff-no-rj" :subscribed="false" />
-      <div class="h-9 w-9">
-        <Doughnut :data="data" :options="options" />
-      </div> 
+      <img :src="image" class="h-9" />
+      <h2 class="text-3xl text-center font-semibold leading-10 overflow-hidden line-clamp-1">
+        {{ name }}
+      </h2>
+      
     </div>
   </Card>
 

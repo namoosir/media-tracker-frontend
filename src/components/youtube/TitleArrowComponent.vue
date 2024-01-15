@@ -1,11 +1,12 @@
 <script setup lang="ts">
 import { ref } from 'vue';
+import ChevronRightIcon from '../icons/ChevronRightIcon.vue';
 
 const props = defineProps<{
     text: string;
 }>();
 
-const text = ref(props.text);
+// const text = ref(props.text);
 
 </script>
 
@@ -14,5 +15,6 @@ const text = ref(props.text);
         <p class="text-sm font-semibold leading-5">
             {{ text }}
         </p>
+        <ChevronRightIcon class="w-5 h-5 fill-muted-foreground"/>
     </div>
 </template>
