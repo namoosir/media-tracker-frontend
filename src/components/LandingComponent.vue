@@ -4,6 +4,7 @@ import { Button } from '@/components/ui/button'
 import GoogleIcon from './icons/GoogleIcon.vue'
 import AggregatorLogoIcon from './icons/AggregatorLogoIcon.vue';
 import * as AuthAPI from '@/apis/auth';
+
 const toGoogle = async () => {
   try {
     const response = await AuthAPI.getSignInOauthRedirect()
@@ -11,6 +12,10 @@ const toGoogle = async () => {
 
     console.log("THIS IS DATA")
     console.log(response.data)
+
+
+
+    
 
     // You can also use this data to update your Vue component's state
     // this.someData = response.data;

@@ -47,11 +47,11 @@ const router = createRouter({
   ]
 })
 
-router.beforeEach((to: RouteLocationNormalized, from: RouteLocationNormalized) => {
+router.beforeEach(async (to: RouteLocationNormalized, from: RouteLocationNormalized) => {
   const authStore = useAuthStore()
 
-  if (!authStore.isIdentified && to.name !== 'landing' && to.name !== 'oauthHandleRedirect') return { name: 'landing' }
-  if (authStore.isIdentified && (to.name === 'landing' || to.name === 'oauthHandleRedirect')) return { name: 'home' }
+  if (to.name !== 'landing' && to.name !== 'oauthHandleRedirect' && !(await authStore.isIdentified)) return { name: 'landing' }
+  if ((to.name === 'landing' || to.name === 'oauthHandleRedirect') && await authStore.isIdentified) return { name: 'home' }
 });
 
 export default router

@@ -1,5 +1,6 @@
 import { defineStore } from 'pinia';
 import type { AuthStore } from './types';
+import * as AuthAPI from '@/apis/auth';
 
 export const useAuthStore: AuthStore = defineStore('auth', {
   state: () => ({
@@ -7,8 +8,10 @@ export const useAuthStore: AuthStore = defineStore('auth', {
   }),
 
   getters: {
-    isIdentified(state) {
-      return !!state.token;
+    async isIdentified(state) {
+      if (!state.token) return false;
+      const response = await AuthAPI.getWhoami()
+      return response.status == 200;
       // Return isValidJWT(state.token)
     },
   },

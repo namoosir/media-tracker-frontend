@@ -12,6 +12,7 @@ export async function getSignInOauthRedirect() {
 }
 
 export async function getWhoami() {
+   console.log("WHOASDMNKOA")
     return axios.get(
       `/auth/whoami`
     );
