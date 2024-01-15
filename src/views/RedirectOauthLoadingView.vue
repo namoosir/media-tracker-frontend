@@ -19,7 +19,7 @@ const token = ref<string | null>(null);
 const error = ref<string | null>(null);
 const router = useRouter();
 
-onMounted(() => {
+onMounted(async () => {
   const params = new URLSearchParams(window.location.search);
   const tokenParam = params.get('token');
   const errorParam = params.get('error');
@@ -33,7 +33,7 @@ onMounted(() => {
     })
   }
   else if (errorParam) {
-    if (!authStore.isIdentified) {
+    if (!(await authStore.isIdentified)) {
       toast({
       title : 'Failed to log in',
       variant : 'destructive', 

@@ -3,21 +3,23 @@ import axios from 'axios'
 import { Button } from '@/components/ui/button'
 import GoogleIcon from './icons/GoogleIcon.vue'
 import AggregatorLogoIcon from './icons/AggregatorLogoIcon.vue';
+import * as AuthAPI from '@/apis/auth';
 
 const toGoogle = async () => {
   try {
-    const response = await axios.get(
-      // 'https://7d40-2607-fea8-a59f-1640-4d32-d71d-dfed-9b8b.ngrok-free.app/auth/platformconnection/request/youtube',
-      'http://localhost:5238/auth/sign/google',
-      {}
-    )
+    const response = await AuthAPI.getSignInOauthRedirect()
+    // const response2 = await AuthAPI.getWhoami()
 
-    // Handle the response data here
+    console.log("THIS IS DATA")
     console.log(response.data)
+
+
+
+    
 
     // You can also use this data to update your Vue component's state
     // this.someData = response.data;
-    // window.location.href = response.data.data;
+    window.location.href = response.data.data;
   } catch (error) {
     // Handle errors here
     console.error('Error:', error)
