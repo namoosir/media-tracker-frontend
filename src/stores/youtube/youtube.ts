@@ -8,7 +8,7 @@ export const useYoutubeStore: YoutubeStore = defineStore('youtube', {
 
     getters: {
         finishedSync() {
-            return false;
+            return true;
         }
     },
 

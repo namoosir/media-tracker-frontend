@@ -32,7 +32,7 @@ const options = {
 </script>
 
 <template>
-  <Card @click="goToTopChannels" class="flex flex-col py-3 px-5 min-w-80 gap-3 cursor-pointer">
+  <Card @click="goToTopChannels" class="flex flex-col py-3 px-5 w-80 gap-3 cursor-pointer">
     <TitleArrowComponent text="Top Channels" />
     <div class="flex flex-row justify-between items-center self-stretch">
       <ChannelComponent variant="summary" name="PewDiePie" image="https://yt3.googleusercontent.com/5oUY3tashyxfqsjO5SGhjT4dus8FkN9CsAHwXWISFrdPYii1FudD4ICtLfuCw6-THJsJbgoY=s176-c-k-c0x00ffffff-no-rj" :subscribed="false" />
