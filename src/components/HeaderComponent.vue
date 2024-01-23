@@ -73,7 +73,7 @@ const onMenuButtonClick : (platform : string) => void = (platform) => {
 <style scoped>
 .opened {
     right: 0;
-    transition-duration: 500ms;
+    transition-duration: 300ms;
 }
 
 </style>
