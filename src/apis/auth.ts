@@ -17,3 +17,17 @@ export async function getWhoami() {
       `/auth/whoami`
     );
 }
+
+
+// Platform Connections
+
+export async function getYoutubePlatformConnection() {
+  return axios.get(
+    `/PlatformConnection/mine`
+  );
+}
+export async function getYoutubePlatformConnectionRedirect() {
+   return axios.get(
+     `/PlatformConnection/action/request/youtube`
+   );
+}

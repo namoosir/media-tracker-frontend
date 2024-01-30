@@ -1,10 +1,27 @@
 <script setup lang="ts">
 import { Button } from '@/components/ui/button'
 import YoutubeIcon from './icons/YoutubeIcon.vue'
+import { onBeforeMount } from 'vue';
+import { useAuthStore } from '@/stores/auth/auth';
+import { useRouter } from 'vue-router';
+import * as AuthAPI from '@/apis/auth';
 
-const toYoutubeConnection = () => {
+const authStore = useAuthStore();
+const router = useRouter();
 
+const toYoutubeConnection = async () => {
+    try {
+      const response = await AuthAPI.getYoutubePlatformConnectionRedirect();
+      window.location.href = response.data.data;
+      
+    } catch {
+      console.error("Error redirecting to youtube")
+    }
 }
+
+onBeforeMount(async () => {
+  if (await authStore.hasPlatfromConnectionYoutube) router.push('/youtube');
+});
 
 </script>
 

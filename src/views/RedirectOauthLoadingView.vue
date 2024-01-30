@@ -22,6 +22,7 @@ const router = useRouter();
 onMounted(async () => {
   const params = new URLSearchParams(window.location.search);
   const tokenParam = params.get('token');
+  const platformConnectionParam = params.get('platformConnection')
   const errorParam = params.get('error');
 
   if (tokenParam) {
@@ -31,6 +32,17 @@ onMounted(async () => {
       variant : 'default', 
       description: 'You are now logged in.'
     })
+
+    router.push('/home');
+  }
+  else if (platformConnectionParam == "youtube"){
+    toast({
+      title : 'Platform Connected - Youtube',
+      variant : 'default', 
+      description: 'Your youtube account has been successfully connected'
+    })
+
+    router.push("/youtube")
   }
   else if (errorParam) {
     if (!(await authStore.isIdentified)) {
@@ -40,9 +52,9 @@ onMounted(async () => {
       description: 'Please try again.'
       })
     }
-  }
 
-  router.push('/home');
+    router.push('/home');
+  }
 });
 </script>
 

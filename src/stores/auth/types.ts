@@ -3,7 +3,7 @@ import type { StoreDefinition } from 'pinia';
 type AuthStore = StoreDefinition<
     "auth", 
     { token: string | null; }, 
-    { isIdentified(state: { token: string | null; }): boolean; }, 
+    { isIdentified(state: { token: string | null; }): boolean; hasPlatfromConnectionYoutube(): boolean;}, 
     { setToken(tokenParam : string) : void,  logout(): void }
 >
 
