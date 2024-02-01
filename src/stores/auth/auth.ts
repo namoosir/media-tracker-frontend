@@ -12,8 +12,6 @@ export const useAuthStore: AuthStore = defineStore('auth', {
       if (!state.token) return false;
       const response = await AuthAPI.getWhoami()
       return response.status == 200;
-      // Return isValidJWT(state.token)
-      // return !!state.token;
     },
 
     async hasPlatfromConnectionYoutube(){
