@@ -1,5 +1,4 @@
 <script setup lang="ts">
-import { ref, watch, onMounted } from 'vue';
 import LoadingComponent from '@/components/youtube/LoadingComponent.vue';
 import SummaryComponent from '@/components/youtube/SummaryComponent.vue'
 import { useYoutubeStore } from '@/stores/youtube/youtube';

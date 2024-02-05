@@ -1,10 +1,11 @@
 <script setup lang="ts">
 import { Card } from '@/components/ui/card'
 import TitleArrowComponent from './TitleArrowComponent.vue';
+import router from '@/router';
 
 
 const goToShorts = () => {
-
+  router.push('/youtube/shorts');
 }
 
 const percent = "10%"

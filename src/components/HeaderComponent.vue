@@ -42,7 +42,7 @@ const onMenuButtonClick : (platform : string) => void = (platform) => {
 </script>
 
 <template>
-<header v-if="!isOpen" class="fixed w-screen">
+<header v-if="!isOpen" class="fixed w-screen z-50">
     <div class="flex p-5 justify-end">
         <Button variant="menu" @click="toggleMenu">MENU</Button>
     </div>
