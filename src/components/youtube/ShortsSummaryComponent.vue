@@ -12,7 +12,7 @@ const fraction = "50/500 Videos"
 </script>
 
 <template>
-  <Card @click="goToShorts" class="flex flex-col py-3 px-5 w-80 gap-3 cursor-pointer">
+  <Card @click="goToShorts" class="flex flex-col py-3 px-5 min-w-80 gap-3 cursor-pointer">
     <TitleArrowComponent text="Shorts" />
     <div class="flex flex-row justify-between items-center self-stretch flex-start gap-2">
       <h2 class="text-3xl font-semibold leading-10">

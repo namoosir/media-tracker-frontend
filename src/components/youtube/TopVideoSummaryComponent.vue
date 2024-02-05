@@ -40,7 +40,7 @@ const name = "Baby Shark Dance | #babyshark Most Viewed Video | Animal Songs | P
 </script>
 
 <template>
-  <Card @click="goToTopVideos" class="flex flex-col py-3 px-5 w-80 gap-3 cursor-pointer">
+  <Card @click="goToTopVideos" class="flex flex-col py-3 px-5 min-w-80 gap-3 cursor-pointer">
     <TitleArrowComponent text="Top Videos" />
     <div class="flex flex-row justify-between items-center self-stretch flex-start gap-2">
       <img :src="image" class="h-9" />
