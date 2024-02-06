@@ -7,6 +7,7 @@ import { useAuthStore } from '@/stores/auth/auth'
 import PlatformView from '@/views/PlatformView.vue'
 import YoutubeHomeViewVue from '@/views/Youtube/YoutubeHomeView.vue'
 import YoutubeShortsView from '@/views/Youtube/YoutubeShortsView.vue'
+import TopVideosView from '@/views/Youtube/TopVideosView.vue'
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -40,6 +41,11 @@ const router = createRouter({
       path: '/youtube/shorts',
       name: 'youtubeShorts',
       component: YoutubeShortsView
+    },
+    {
+      path: '/youtube/topVideos',
+      name: 'topVideos',
+      component: TopVideosView
     },
     {
       path: '/404',

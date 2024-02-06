@@ -15,7 +15,7 @@ const props = defineProps<{
             <h2 class="text-3xl text-center font-semibold leading-10">
                 {{ name }}
             </h2>
-            <p v-if="subscribed" class="text-center text-xxs">
+            <p v-if="subscribed" class="text-center text-muted-foreground text-xxs font-medium">
                 Subscribed
             </p>
             <p v-else class="text-center text-muted-foreground text-xxs font-medium">
