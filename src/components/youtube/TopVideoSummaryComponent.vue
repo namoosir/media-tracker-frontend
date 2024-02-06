@@ -3,11 +3,12 @@ import { Card } from '@/components/ui/card'
 import { Chart as ChartJS, BarElement, CategoryScale, LinearScale, LogarithmicScale } from 'chart.js'
 import { Bar } from 'vue-chartjs';
 import TitleArrowComponent from './TitleArrowComponent.vue';
+import router from '@/router';
 
 ChartJS.register(CategoryScale, LinearScale, BarElement, LogarithmicScale)
 
 const goToTopVideos = () => {
-
+  router.push('/youtube/topVideos');
 }
 
 const data = {
