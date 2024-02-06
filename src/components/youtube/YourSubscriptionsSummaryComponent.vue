@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import ImageGridSummaryComponent from './ImageGridSummaryComponent.vue';
 
-const title = "Your Subscriptions";
+const title = "Subscriptions";
 const images = [
     'https://yt3.googleusercontent.com/5oUY3tashyxfqsjO5SGhjT4dus8FkN9CsAHwXWISFrdPYii1FudD4ICtLfuCw6-THJsJbgoY=s176-c-k-c0x00ffffff-no-rj',
     'https://yt3.googleusercontent.com/ytc/AIf8zZS5rw1HUlwKPR0ERetSUCbi_D83ik5eGJjr0hGVCA=s176-c-k-c0x00ffffff-no-rj',

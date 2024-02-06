@@ -15,7 +15,7 @@ defineProps<{
 </script>
 
 <template>
-  <Card @click="onButtonClick" class="flex flex-col py-3 px-5 w-80 gap-3 cursor-pointer">
+  <Card @click="onButtonClick" class="flex flex-col py-3 px-5 min-w-80 gap-3 cursor-pointer">
     <TitleArrowComponent :text="title" />
     <div class="flex flex-row justify-between items-center self-stretch">
       <h2 class="text-3xl font-semibold leading-10">

@@ -3,11 +3,12 @@ import { Card } from '@/components/ui/card'
 import { Chart as ChartJS, BarElement, CategoryScale, LinearScale, LogarithmicScale } from 'chart.js'
 import { Bar } from 'vue-chartjs';
 import TitleArrowComponent from './TitleArrowComponent.vue';
+import router from '@/router';
 
 ChartJS.register(CategoryScale, LinearScale, BarElement, LogarithmicScale)
 
 const goToTopVideos = () => {
-
+  router.push('/youtube/topVideos');
 }
 
 const data = {
@@ -40,7 +41,7 @@ const name = "Baby Shark Dance | #babyshark Most Viewed Video | Animal Songs | P
 </script>
 
 <template>
-  <Card @click="goToTopVideos" class="flex flex-col py-3 px-5 w-80 gap-3 cursor-pointer">
+  <Card @click="goToTopVideos" class="flex flex-col py-3 px-5 min-w-80 gap-3 cursor-pointer">
     <TitleArrowComponent text="Top Videos" />
     <div class="flex flex-row justify-between items-center self-stretch flex-start gap-2">
       <img :src="image" class="h-9" />
